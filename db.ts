@@ -12,7 +12,6 @@ export async function getClient(): Promise<Client> {
     POSTGRES_NAME: process.env.POSTGRES_NAME,
     POSTGRES_PORT: process.env.POSTGRES_PORT
   });
-
   if (process.env.DATABASE_URL) {
     const client = new Client({
       connectionString: process.env.DATABASE_URL
