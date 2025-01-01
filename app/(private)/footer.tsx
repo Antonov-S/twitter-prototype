@@ -1,3 +1,23 @@
+import Link from "next/link";
+
 export default function Footer() {
-  return <footer>Footer</footer>;
+  const currentDate = new Date();
+  return (
+    <footer className="container md:w-full flex justify-between items-center text-xs opacity-50 mt-3">
+      <small className="text-xs">
+        <p>
+          © Copyright by{" "}
+          <Link
+            className=""
+            href="https://s-antonov-portfolio-website.vercel.app/"
+            target="_blank"
+          >
+            <b>S.Antonov</b>
+          </Link>
+          . Intended for learning purposes.
+        </p>
+      </small>
+      <p className="invisible md:visible">Version 1.0</p>
+    </footer>
+  );
 }

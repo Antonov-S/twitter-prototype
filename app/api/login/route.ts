@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import bcrypt from "bcrypt";
 import { SignJWT } from "jose";
+import bcrypt from "bcrypt";
 
 import { sql } from "@/db";
 
@@ -10,18 +10,14 @@ export async function POST(request: Request) {
     "select id, username, password from users where username ilike $1",
     [json.username]
   );
-  console.log(res);
-
-  if (res.rowCount === 0) {
+  if (res.rowCount == 0) {
     return NextResponse.json({ error: "user not found" }, { status: 404 });
   }
-
   const user = res.rows[0];
   const match = await bcrypt.compare(json.password, user.password);
   if (!match) {
     return NextResponse.json({ error: "invalid credentials" }, { status: 401 });
   }
-
   const token = await new SignJWT({})
     .setProtectedHeader({ alg: "HS256" })
     .setSubject(user.id)
@@ -32,7 +28,7 @@ export async function POST(request: Request) {
   response.cookies.set("jwt-token", token, {
     sameSite: "strict",
     httpOnly: true,
-    secure: true
+    secure: false
   });
   return response;
 }
