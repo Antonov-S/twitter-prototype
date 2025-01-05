@@ -1,6 +1,7 @@
-import { UserT } from "@/app/types";
 import Image from "next/image";
 import Link from "next/link";
+
+import { UserT } from "@/app/types";
 
 type UserProps = {
   user: UserT;
