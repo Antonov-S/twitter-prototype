@@ -19,5 +19,7 @@ export async function GET(request: Request) {
     [jwtPayload.sub, limit, offset]
   );
 
+  console.log(res.rows);
+
   return NextResponse.json({ data: res.rows });
 }
