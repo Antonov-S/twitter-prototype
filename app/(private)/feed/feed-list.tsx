@@ -1,6 +1,7 @@
 import useSWR from "swr";
 
 import { PostT } from "@/app/types";
+import Post from "@/app/components/post";
 
 export default function FeedList({ index }: { index: number }) {
   const { data, error, isLoading } = useSWR("/api/posts/feed?page=" + index);
@@ -13,7 +14,7 @@ export default function FeedList({ index }: { index: number }) {
       {data.data.map((post: PostT) => {
         return (
           <li className="my-5" key={post.id}>
-            {post.content}
+            <Post post={post} />
           </li>
         );
       })}
