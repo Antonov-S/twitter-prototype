@@ -42,7 +42,7 @@ export default function Post({ post }: PostProps) {
         <div className="font-bold">
           <Link href={`/${post.username}`}>{post.username}</Link>
         </div>
-        <div className="text-slate-400">
+        <div className="text-slate-400 text-xs">
           {createdAt.toLocaleDateString("en-us", options)}
         </div>
         <div>{post.content}</div>
