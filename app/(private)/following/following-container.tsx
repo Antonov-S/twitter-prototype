@@ -1,13 +1,12 @@
 import { useState } from "react";
+import FollowingList from "./following-list";
 
-import FeedList from "./feed-list";
-
-export default function FeedContainer() {
+export default function FollowingContainer() {
   const [cnt, setCnt] = useState(1);
 
   const pages = [];
   for (let i = 0; i < cnt; i++) {
-    pages.push(<FeedList index={i} key={i} />);
+    pages.push(<FollowingList index={i} key={i} />);
   }
 
   return (
