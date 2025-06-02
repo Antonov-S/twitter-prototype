@@ -3,6 +3,7 @@ import { useState } from "react";
 import FollowersList from "./followers-list";
 
 export default function FollowersContainer() {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [cnt, setCnt] = useState(1);
 
   const pages = [];

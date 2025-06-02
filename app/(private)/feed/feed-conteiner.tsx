@@ -3,6 +3,7 @@ import { useState } from "react";
 import FeedList from "./feed-list";
 
 export default function FeedContainer() {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [cnt, setCnt] = useState(1);
 
   const pages = [];

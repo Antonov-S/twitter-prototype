@@ -1,7 +1,5 @@
 import { cookies } from "next/headers";
-import { NextResponse } from "next/server";
 
-import { sql } from "@/db";
 import { jwtVerify } from "jose";
 
 export async function getJWTPayload() {
