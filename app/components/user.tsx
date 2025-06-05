@@ -5,7 +5,7 @@ import { UserT } from "@/app/types";
 
 type UserProps = {
   user: UserT;
-  href: string;
+  href?: string;
 };
 
 function User({ user, href }: UserProps) {
